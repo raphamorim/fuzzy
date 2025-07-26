@@ -1,0 +1,84 @@
+Fuzzy Search Library Benchmark Suite
+====================================
+Dataset sizes: Small=100, Medium=10000, Large=100000
+Number of CPUs: 14
+Go version: go1.24.0
+
+goos: darwin
+goarch: arm64
+pkg: github.com/raphamorim/fuzzy/benchmark
+cpu: Apple M4 Pro
+BenchmarkRealWorld_FilenameFuzzySearch/sahilm-14   	     189	  31866864 ns/op	 2244848 B/op	   10867 allocs/op
+BenchmarkRealWorld_FilenameFuzzySearch/lithammer-14         	    2415	   2486828 ns/op	  560944 B/op	      64 allocs/op
+BenchmarkRealWorld_FilenameFuzzySearch/raphamorim_ngram-14  	  346851	     16710 ns/op	   33344 B/op	     112 allocs/op
+BenchmarkRealWorld_AutoComplete/sahilm-14                   	    5780	   1035407 ns/op	  115408 B/op	     676 allocs/op
+BenchmarkRealWorld_AutoComplete/lithammer-14                	   56751	    105780 ns/op	   22320 B/op	      40 allocs/op
+BenchmarkRealWorld_AutoComplete/raphamorim_trigram-14       	  104476	     57672 ns/op	   70280 B/op	    1156 allocs/op
+BenchmarkExactMatch_Sahilm_Small-14                         	   71068	     86045 ns/op	    1264 B/op	      26 allocs/op
+BenchmarkExactMatch_Sahilm_Medium-14                        	     583	  10323118 ns/op	    5744 B/op	      77 allocs/op
+BenchmarkExactMatch_Sahilm_Large-14                         	      58	 100753816 ns/op	    8832 B/op	      94 allocs/op
+BenchmarkExactMatch_Lithammer_Small-14                      	  944184	      6412 ns/op	      32 B/op	       2 allocs/op
+BenchmarkExactMatch_Lithammer_Medium-14                     	    4684	   1292350 ns/op	     736 B/op	      19 allocs/op
+BenchmarkExactMatch_Lithammer_Large-14                      	     471	  12774388 ns/op	    1248 B/op	      21 allocs/op
+BenchmarkExactMatch_Raphamorim_BKTree-14                    	  261058	     22760 ns/op	   49696 B/op	     520 allocs/op
+BenchmarkExactMatch_Raphamorim_NGram-14                     	   20475	    285277 ns/op	  448896 B/op	     274 allocs/op
+BenchmarkTypoMatch_Sahilm_Small-14                          	   73791	     81559 ns/op	     992 B/op	      20 allocs/op
+BenchmarkTypoMatch_Sahilm_Medium-14                         	     606	   9909466 ns/op	    3560 B/op	      40 allocs/op
+BenchmarkTypoMatch_Lithammer_Small-14                       	  981111	      6160 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTypoMatch_Lithammer_Medium-14                      	    5067	   1182645 ns/op	     496 B/op	       5 allocs/op
+BenchmarkTypoMatch_Raphamorim_BKTree-14                     	     698	   8599548 ns/op	23318554 B/op	  234564 allocs/op
+BenchmarkTypoMatch_Raphamorim_Trigram-14                    	    5972	    974368 ns/op	 1038600 B/op	   29480 allocs/op
+BenchmarkRanking_Lithammer_Medium-14                        	    3763	   1538278 ns/op	  270560 B/op	      60 allocs/op
+BenchmarkRanking_Lithammer_Large-14                         	     770	   7872075 ns/op	  456048 B/op	      39 allocs/op
+BenchmarkIndexBuild_Raphamorim_BKTree_Small-14              	   89832	     66274 ns/op	  178648 B/op	    2278 allocs/op
+BenchmarkIndexBuild_Raphamorim_BKTree_Medium-14             	    4144	   1397614 ns/op	 3816880 B/op	   40001 allocs/op
+BenchmarkIndexBuild_Raphamorim_NGram_Small-14               	  186752	     31810 ns/op	   47312 B/op	    1025 allocs/op
+BenchmarkIndexBuild_Raphamorim_LSH_Small-14                 	   42655	    139240 ns/op	  160850 B/op	    2228 allocs/op
+BenchmarkEditDistance_Comparison/raphamorim_levenshtein-14  	 2733399	      2220 ns/op	    1136 B/op	       4 allocs/op
+BenchmarkEditDistance_Comparison/raphamorim_damerau-14      	  697347	      7990 ns/op	   18416 B/op	      47 allocs/op
+BenchmarkEditDistance_Comparison/raphamorim_myers-14        	21151092	       277.5 ns/op	    1904 B/op	       3 allocs/op
+BenchmarkAdvanced_WuManber-14                               	 7542202	       790.1 ns/op	     264 B/op	       9 allocs/op
+BenchmarkAdvanced_SimHash-14                                	  321513	     18335 ns/op	     712 B/op	      11 allocs/op
+BenchmarkScaling/sahilm_100-14                              	  790696	      7675 ns/op	      56 B/op	       2 allocs/op
+BenchmarkScaling/lithammer_100-14                           	 7059194	       827.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkScaling/raphamorim_bktree_100-14                   	 1693282	      3509 ns/op	    8432 B/op	     136 allocs/op
+BenchmarkScaling/sahilm_1000-14                             	   61698	     97553 ns/op	     320 B/op	       7 allocs/op
+BenchmarkScaling/lithammer_1000-14                          	  601724	      9966 ns/op	      48 B/op	       2 allocs/op
+BenchmarkScaling/raphamorim_bktree_1000-14                  	  340741	     17340 ns/op	   41376 B/op	     658 allocs/op
+BenchmarkScaling/sahilm_10000-14                            	    5976	   1005831 ns/op	   10144 B/op	      74 allocs/op
+BenchmarkScaling/lithammer_10000-14                         	   52224	    113609 ns/op	    2160 B/op	       7 allocs/op
+BenchmarkScaling/raphamorim_bktree_10000-14                 	   33091	    180386 ns/op	  414896 B/op	    6584 allocs/op
+BenchmarkScaling/sahilm_100000-14                           	     588	  10142342 ns/op	  145888 B/op	     736 allocs/op
+BenchmarkScaling/lithammer_100000-14                        	    4172	   1440253 ns/op	   35184 B/op	      11 allocs/op
+BenchmarkScaling/raphamorim_bktree_100000-14                	    3372	   1739307 ns/op	 3714544 B/op	   59001 allocs/op
+BenchmarkQueryLength/sahilm_short-14                        	    5718	   1039552 ns/op	   79472 B/op	     598 allocs/op
+BenchmarkQueryLength/lithammer_short-14                     	   53276	    112092 ns/op	   18800 B/op	      10 allocs/op
+BenchmarkQueryLength/sahilm_medium-14                       	    5980	    990493 ns/op	     240 B/op	       5 allocs/op
+BenchmarkQueryLength/lithammer_medium-14                    	   58636	    104037 ns/op	      16 B/op	       1 allocs/op
+BenchmarkQueryLength/sahilm_long-14                         	    6505	    921233 ns/op	     456 B/op	       3 allocs/op
+BenchmarkQueryLength/lithammer_long-14                      	  183520	     33174 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMemory_Sahilm_Large-14                             	     560	  10200206 ns/op	         0 bytes/op	  145888 B/op	     736 allocs/op
+BenchmarkMemory_Lithammer_Large-14                          	    4015	   1441964 ns/op	         0 bytes/op	   35184 B/op	      11 allocs/op
+BenchmarkMemory_Raphamorim_BKTree_Build-14                  	     510	  12072758 ns/op	         0 bytes/tree	 3816890 B/op	   40001 allocs/op
+BenchmarkConcurrent_Sahilm_Medium-14                        	   57114	    107967 ns/op	    5382 B/op	      33 allocs/op
+BenchmarkConcurrent_Lithammer_Medium-14                     	  552768	     10782 ns/op	     658 B/op	       2 allocs/op
+BenchmarkConcurrent_Raphamorim_BKTree-14                    	   16426	    364601 ns/op	 2359232 B/op	   23441 allocs/op
+PASS
+
+Benchmark Summary
+=================
+
+Key Findings:
+1. sahilm/fuzzy: Optimized for editor-style filename matching
+2. lithammer/fuzzysearch: Good balance with Levenshtein distance
+3. raphamorim/fuzzy: Advanced algorithms for different use cases
+   - BK-Tree: Efficient for spell checking with edit distance
+   - N-gram/Trigram: Fast for partial matches
+   - LSH: Excellent for document similarity
+   - Suffix Array: Powerful for substring search
+
+Recommendations:
+- For simple fuzzy matching: lithammer/fuzzysearch
+- For filename/path matching: sahilm/fuzzy
+- For advanced use cases: raphamorim/fuzzy
+ok  	github.com/raphamorim/fuzzy/benchmark	373.069s
