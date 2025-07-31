@@ -1,4 +1,4 @@
-# Advanced Fuzzy Search Library for Go
+# Fuzzy
 
 A comprehensive fuzzy search library implementing state-of-the-art algorithms and data structures for approximate string matching, text search, and similarity detection.
 
