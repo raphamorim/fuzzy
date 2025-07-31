@@ -28,6 +28,8 @@ A comprehensive fuzzy search library implementing state-of-the-art algorithms an
 - **Ukkonen A***: A* search for approximate pattern matching
 - **Bitonic Sort**: Parallel-friendly sorting for fuzzy matches
 
+![Benchmark](benchmark/plot/scaling_performance.png)
+
 ## Installation
 
 ```bash

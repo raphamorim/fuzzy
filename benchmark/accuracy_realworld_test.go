@@ -170,8 +170,8 @@ func BenchmarkRealWorld_AutoComplete(b *testing.B) {
 	
 	b.Run("raphamorim_trigram", func(b *testing.B) {
 		ti := raphamorim.NewTrigramIndex()
-		for _, word := range expandedWords {
-			ti.Add(word)
+		for i, word := range expandedWords {
+			ti.Add(word, i)
 		}
 		
 		b.ResetTimer()

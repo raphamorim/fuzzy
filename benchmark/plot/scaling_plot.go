@@ -29,16 +29,16 @@ func createScalingPlot() {
 	datasetSizes := []float64{100, 1000, 10000, 100000}
 	
 	// sahilm/fuzzy results
-	sahilmTimes := []float64{7477, 95241, 994445, 10006667}
+	sahilmTimes := []float64{7701, 97028, 1018647, 10352907}
 	
 	// lithammer/fuzzysearch results
-	lithammerTimes := []float64{808.1, 9752, 114700, 1417081}
+	lithammerTimes := []float64{823.7, 10034, 123716, 1498196}
 	
 	// raphamorim/fuzzy BK-Tree results (new optimized version)
-	raphamorimBKTimes := []float64{985.1, 4812, 53015, 507725}
+	raphamorimBKTimes := []float64{1003, 4975, 54623, 538290}
 	
-	// raphamorim/fuzzy NGram results
-	raphamorimNGramTimes := []float64{145.4, 321.4, 8610, 57094}
+	// raphamorim/fuzzy NGram results (new optimized version)
+	raphamorimNGramTimes := []float64{265.7, 495.0, 7581, 55022}
 
 	// Create line plots
 	sahilmPts := make(plotter.XYs, len(datasetSizes))

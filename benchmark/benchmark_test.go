@@ -240,8 +240,8 @@ func buildRaphamorimIndices() {
 	
 	// Build Trigram index
 	raphamorimTrigram = raphamorim.NewTrigramIndex()
-	for _, text := range mediumDataset {
-		raphamorimTrigram.Add(text)
+	for i, text := range mediumDataset {
+		raphamorimTrigram.Add(text, i)
 	}
 	
 	// Build Suffix Array (for smaller dataset due to memory)
