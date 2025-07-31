@@ -1,0 +1,83 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Build the project
+    cmds:
+      - task: build
+
+  build:
+    desc: Build the project
+    cmds:
+      - go build -v ./...
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go test -v ./...
+
+  test-race:
+    desc: Run tests with race detector
+    cmds:
+      - go test -race -v ./...
+
+  bench:
+    desc: Run benchmarks
+    cmds:
+      - go test -bench=. -benchmem ./...
+
+  bench-all:
+    desc: Run all benchmarks including subdirs
+    cmds:
+      - cd benchmark && go test -bench=. -benchmem ./...
+
+  coverage:
+    desc: Generate coverage report
+    cmds:
+      - go test -coverprofile=coverage.out ./...
+      - go tool cover -html=coverage.out -o coverage.html
+
+  fmt:
+    desc: Format code
+    cmds:
+      - go fmt ./...
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet ./...
+
+  lint:
+    desc: Run golangci-lint
+    cmds:
+      - golangci-lint run
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - go clean
+      - rm -f coverage.out coverage.html
+
+  deps:
+    desc: Download and tidy dependencies
+    cmds:
+      - go mod download
+      - go mod tidy
+
+  update-deps:
+    desc: Update all dependencies
+    cmds:
+      - go get -u ./...
+      - go mod tidy
+
+  run-benchmarks:
+    desc: Run benchmark script
+    dir: benchmark
+    cmds:
+      - ./run_benchmarks.sh
+
+  plot:
+    desc: Generate benchmark plots
+    dir: benchmark/plot
+    cmds:
+      - go run main.go
