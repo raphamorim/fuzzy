@@ -1,3 +1,0 @@
-testing: warning: no tests to run
-PASS
-ok  	github.com/raphamorim/fuzzy	0.141s
