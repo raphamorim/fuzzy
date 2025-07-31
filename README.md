@@ -94,7 +94,19 @@ Run benchmarks with:
 go test -bench=. ./...
 ```
 
-## Algorithm Complexity
+## Algorithm Comparison
+
+### Key Differences
+
+| Algorithm | Type | Best Use Case | Strengths | Limitations |
+|-----------|------|---------------|-----------|-------------|
+| **BK-Tree** | Tree-based | Spell checking, typo correction | Exact edit distance, efficient for small distances | Slower for large edit distances |
+| **LSH** | Hash-based | Near-duplicate detection, document similarity | Very fast queries, probabilistic | Approximate results, needs tuning |
+| **Suffix Array** | Index-based | Substring search, pattern matching | Exact matches, handles large texts | High memory usage, slow updates |
+| **Wu-Manber** | Bit-parallel | Pattern search with errors | Fast streaming search, configurable errors | Limited pattern length |
+| **N-gram** | Statistical | Partial matching, similarity scoring | Flexible similarity metrics, language-agnostic | Less precise than edit distance |
+
+### Algorithm Complexity
 
 | Algorithm | Build Time | Search Time | Space |
 |-----------|------------|-------------|-------|
@@ -124,4 +136,4 @@ This library implements advanced algorithms not found in those libraries:
 
 ## License
 
-MIT
+GPL-3.0
